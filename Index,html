@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualização de Carrossel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #carousel {
+            display: flex;
+            overflow: hidden;
+            width: 1080px;
+            height: 1350px;
+            border: 1px solid #000;
+            position: relative;
+        }
+        .slide {
+            min-width: 1080px;
+            height: 1350px;
+        }
+		.slide--animated{
+		    transition: transform 0.5s ease-in-out;
+		}
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #prev, #next {
+            background-color: rgba(0,0,0,0.5);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+			padding: 50px;
+			font-size: 100px;
+			transition: all 300ms ease-in-out;
+        }
+		#prev:hover, #next:hover {
+            background-color: black;
+        }
+		.preview{
+			display: flex;
+		}
+    </style>
+</head>
+<body>
+    <input type="file" id="fileInput" accept="image/*">
+	<button id="toggleAnimationBtn">Alternar Animação</button>
+
+    <section class="preview">
+	    <button id="prev" style="display:none;">&#10094;</button>
+		<div id="carousel"></div>
+		<button id="next" style="display:none;">&#10095;</button>
+	</section>
+    <script src="script.js"></script>
+</body>
+</html>
